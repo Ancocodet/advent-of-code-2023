@@ -49,5 +49,5 @@ tasks.test {
 }
 
 tasks.withType<JavaCompile> {
-    options.encoding = "utf-8"
+    options.encoding = "UTF-8"
 }
