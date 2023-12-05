@@ -29,6 +29,8 @@ public class Main {
             AInputData inputData = aClass.getAnnotation(AInputData.class);
             IAdventDay adventDay = (IAdventDay) createNewInstanceOfClass(aClass);
 
+            System.out.println("Starting calculation for " + inputData.day() + "/" + inputData.year());
+
             File file = new File("output", "day-" + inputData.day() + ".txt");
             if(!file.exists()){
                 try {
