@@ -1,0 +1,12 @@
+RL
+
+AAA = (BBB, CCC)
+11A = (22B, 22C)
+BBB = (DDD, EEE)
+22B = (DDD, EEE)
+CCC = (ZZZ, GGG)
+22C = (ZZZ, GGG)
+DDD = (DDD, DDD)
+EEE = (EEE, EEE)
+GGG = (GGG, GGG)
+ZZZ = (ZZZ, ZZZ)
