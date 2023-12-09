@@ -3,7 +3,6 @@ package com.ancozockt.advent.days;
 import de.ancozockt.aoclib.annotations.AInputData;
 import de.ancozockt.aoclib.interfaces.IAdventDay;
 import de.ancozockt.aoclib.interfaces.IInputHelper;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

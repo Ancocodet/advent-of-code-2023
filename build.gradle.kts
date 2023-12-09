@@ -51,3 +51,52 @@ tasks.test {
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
 }
+
+task("generateNextDay") {
+    doLast {
+        val prevDayNum = fileTree("$projectDir/src/main/java/com/ancozockt/advent/days").matching {
+            include("Day*.java")
+        }.maxOf {
+            val (prevDayNum) = Regex("Day(\\d+)").find(it.name)!!.destructured
+            prevDayNum.toInt()
+        }
+        val newDayNum = prevDayNum + 1;
+        File("$projectDir/src/main/java/com/ancozockt/advent/days", "Day$newDayNum.java").writeText(
+            """
+package com.ancozockt.advent.days;
+
+import de.ancozockt.aoclib.annotations.AInputData;
+import de.ancozockt.aoclib.interfaces.IAdventDay;
+import de.ancozockt.aoclib.interfaces.IInputHelper;
+
+@AInputData(day = $newDayNum, year = 2023)
+public class Day$newDayNum implements IAdventDay {
+
+    @Override
+    public String part1(IInputHelper inputHelper) {
+        return null;
+    }
+    
+    @Override
+    public String part2(IInputHelper inputHelper) {
+        return null;
+    }
+    
+}
+"""
+        )
+
+        // Generate input file
+        File("$projectDir/src/test/resources/input", "day$newDayNum-input").writeText(
+            """#Input data for day $newDayNum#
+"""
+        )
+
+        // Generate output file
+        File("$projectDir/src/test/resources/output", "day$newDayNum-output").writeText(
+            """#nottestable#
+#nottestable#
+"""
+        )
+    }
+}
