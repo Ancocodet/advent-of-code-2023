@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@AInputData(day = 5, year = 2023)
 public class Day5 implements IAdventDay {
 
     @Override
