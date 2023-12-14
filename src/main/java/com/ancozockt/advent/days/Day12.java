@@ -35,9 +35,6 @@ public class Day12 implements IAdventDay {
 
         inputHelper.getInputAsStream().forEach(line -> {
             SpringHistory springHistory = new SpringHistory(unFold(line));
-
-            System.out.println(getVariations(springHistory.commas(), springHistory.unknownParts()).size());
-
             /*
             for(List<Integer> commas : getVariations(springHistory.commas(), springHistory.unknownParts())) {
                 if(springHistory.isValid(commas))
@@ -46,7 +43,7 @@ public class Day12 implements IAdventDay {
              */
         });
 
-        return sum.get() + "";
+        return null;
     }
 
     private String unFold(String line) {
@@ -162,7 +159,6 @@ public class Day12 implements IAdventDay {
         }
     }
 
-
     private class HistoryPart {
         public List<SpringStatus> springStatuses = new ArrayList<>();
         private int unknownParts = 0;
@@ -224,7 +220,7 @@ public class Day12 implements IAdventDay {
         }
     }
 
-    private enum SpringStatus {
+    public enum SpringStatus {
         WORKING,
         UNKNOWN,
         BROKEN
