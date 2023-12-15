@@ -24,8 +24,10 @@ public class Day14 implements IAdventDay {
     public String part2(IInputHelper inputHelper) {
         Platform platform = parseInput(inputHelper);
 
-        for(int c = 0; c < 100_000_000; c++) {
+        /*
+        for(int c = 0; c < 1_000_000_000; c++) {
         }
+         */
 
         return platform.calculateWeightNorth() + "";
     }
